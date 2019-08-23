@@ -3,7 +3,7 @@
   <head>
     <title>MemSQL Take Home Assessment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -12,64 +12,123 @@
       </nav>
     </header>
     <section>
-        <div class="container">
-      <div class="icon-container"></div>
-      <div class="title-container">
-        <h1 class="form-title">Book a Demo</h1>
-        <p class="form-description">
-          Help us customize your demo by answering the following questions
-          below.
-        </p>
+      <div class="container">
+        <div class="icon-container"></div>
+        <div class="title-container">
+          <h1 class="form-title">Book a Demo</h1>
+          <p class="form-description">
+            Help us customize your demo by answering the following questions
+            below.
+          </p>
+        </div>
+        <form action="" method="POST">
+          <label for="business-email" class="form-labels">Business Email</label>
+          <input
+            type="email"
+            id="business-email"
+            name="business-email"
+            placeholder="Enter your business email"
+            required
+          />
+          <label for="business-size" class="form-labels">Business Size</label>
+          <select id="business-size" required>
+            <option id="size-10" value="1-10">1-10</option>
+            <option id="size-50" value="11-50">11-50</option>
+            <!-- Noticed Figma was 11-15 and the next option was 51 to 100, made assumption it was meant to be 11 - 50 -->
+            <option id="size-100" value="51-100">51-100</option>
+            <option id="size-250" value="101-250">101-250</option>
+            <option id="size-1000" value="250-1000">250-1000</option>
+            <option id="size-1000+" value="1000+">1000+</option>
+          </select>
+          <label for="radio-container" class="form-labels"
+            >What is the most important thing to you in a solution?</label
+          >
+          <div id="radio-container">
+            <div class="col-left">
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="real-time-analytics"
+                  value="real-time-analytics"
+                  name="importance-indicator"
+                />
+                <label for="real-time-analytics">Real-time Analytics</label>
+              </div>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="query-response-time"
+                  value="query-response-time"
+                  name="importance-indicator"
+                />
+                <label for="query-response-time">Query Response Time</label>
+              </div>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="high-concurrency"
+                  value="high-concurrency"
+                  name="importance-indicator"
+                />
+                <label for="high-concurrency">High Concurrency</label>
+              </div>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="fast-data-ingest"
+                  value="fast-data-ingest"
+                  name="importance-indicator"
+                />
+                <label for="fast-data-ingest">Fast Data Ingest</label>
+              </div>
+            </div>
+            <div class="col-right">
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="scalability"
+                  value="scalability"
+                  name="importance-indicator"
+                />
+                <label for="scalability">Scalability</label>
+              </div>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="document-storage"
+                  value="document-storage"
+                  name="importance-indicator"
+                />
+                <label for="document-storage">Document Storage</label>
+              </div>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="full-text-search"
+                  value="full-text-search"
+                  name="importance-indicator"
+                />
+                <label for="full-text-search">Full Text Search</label>
+              </div>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="price"
+                  value="price"
+                  name="importance-indicator"
+                />
+                <label for="price">Price</label>
+              </div>
+            </div>
+          </div>
+          <input
+            type="submit"
+            id="submit"
+            class="btn-submit btn"
+            value="Continue to Schedule a Time &rarr;"
+          />
+        </form>
       </div>
-      <form action="" method="POST">
-        <label for="business-email" class="form-labels">Business Email</label>
-        <input
-          type="email"
-          id="business-email"
-          name="business-email"
-          placeholder="Enter your business email"
-          required
-        />
-        <label for="business-size" class="form-labels">Business Size</label>
-        <select id="business-size" required>
-          <option id="size-10" value="1-10">1-10</option>
-          <option id="size-50" value="11-50">11-50</option>
-          <!-- Noticed Figma was 11-15 and the next option was 51 to 100, made assumption it was meant to be 11 - 50 -->
-          <option id="size-100" value="51-100">51-100</option>
-          <option id="size-250" value="101-250">101-250</option>
-          <option id="size-1000" value="250-1000">250-1000</option>
-          <option id="size-1000+" value="1000+">1000+</option>
-        </select>
-        <fieldset id="radio-container">
-            <label for="radio-container" class="form-labels">What is the most important thing to you in a solution?</label>
-            <div class="radio-group">
-        <input type="radio" id="real-time-analytics" value="real-time-analytics" name="importance-indicator">
-        <label for="real-time-analytics">Real-time Analytics</label>
-    </div>
-<div class="radio-group">
-        <input type="radio" id="query-response-time" value="query-response-time" name="importance-indicator">
-        <label for="query-response-time">Query Response Time</label>
-    </div><div class="radio-group">
-        <input type="radio" id="high-concurrency" value="high-concurrency" name="importance-indicator">
-        <label for="high-concurrency">High Concurrency</label>
-    </div><div class="radio-group">
-        <input type="radio" id="fast-data-ingest" value="fast-data-ingest" name="importance-indicator">
-        <label for="fast-data-ingest">Fast Data Ingest</label>
-    </div><div class="radio-group">
-        <input type="radio" id="scalability" value="scalability" name="importance-indicator">
-        <label for="scalability">Scalability</label>
-    </div><div class="radio-group">
-        <input type="radio" id="document-storage" value="document-storage" name="importance-indicator">
-        <label for="document-storage">Document Storage</label>
-    </div><div class="radio-group">
-        <input type="radio" id="full-text-search" value="full-text-search" name="importance-indicator">
-        <label for="full-text-search">Full Text Search</label>
-    </div><div class="radio-group">
-        <input type="radio" id="price" value="price" name="importance-indicator">
-        <label for="price">Price</label>
-    </div>
-    </fieldset>
-</div>
     </section>
   </body>
 </html>
