@@ -3,6 +3,7 @@
   <head>
     <title>MemSQL Take Home Assessment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
@@ -31,7 +32,8 @@
             required
           />
           <label for="business-size" class="form-labels">Business Size</label>
-          <select id="business-size" required>
+          <select id="business-size" placeholder="Select Size" required>
+              <option id="select-size" value="select-size" selected disabled>Select Size</option>
             <option id="size-10" value="1-10">1-10</option>
             <option id="size-50" value="11-50">11-50</option>
             <!-- Noticed Figma was 11-15 and the next option was 51 to 100, made assumption it was meant to be 11 - 50 -->
