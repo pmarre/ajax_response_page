@@ -3,8 +3,13 @@
   <head>
     <title>MemSQL Take Home Assessment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+      rel="stylesheet"
+    />
     <link href="style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="memsql.js"></script>
   </head>
   <body>
     <header>
@@ -22,7 +27,7 @@
             below.
           </p>
         </div>
-        <form action="" method="POST">
+        <form id="form" action="" method="POST">
           <label for="business-email" class="form-labels">Business Email</label>
           <input
             type="email"
@@ -31,17 +36,41 @@
             placeholder="Enter your business email"
             required
           />
+          <div class="message">
+            Please make your email is not a personal account.
+          </div>
           <label for="business-size" class="form-labels">Business Size</label>
           <select id="business-size" placeholder="Select Size" required>
-              <option id="select-size" value="select-size" selected disabled>Select Size</option>
-            <option id="size-10" value="1-10">1-10</option>
-            <option id="size-50" value="11-50">11-50</option>
+            <option
+              class="select-label"
+              id="select-label"
+              value="label"
+              selected
+              disabled
+              hidden
+              >Select Size</option
+            >
+            <option class="drop-down-option" id="size-10" value="1-10"
+              >1-10</option
+            >
+            <option class="drop-down-option" id="size-50" value="11-50"
+              >11-50</option
+            >
             <!-- Noticed Figma was 11-15 and the next option was 51 to 100, made assumption it was meant to be 11 - 50 -->
-            <option id="size-100" value="51-100">51-100</option>
-            <option id="size-250" value="101-250">101-250</option>
-            <option id="size-1000" value="250-1000">250-1000</option>
-            <option id="size-1000+" value="1000+">1000+</option>
+            <option class="drop-down-option" id="size-100" value="51-100"
+              >51-100</option
+            >
+            <option class="drop-down-option" id="size-250" value="101-250"
+              >101-250</option
+            >
+            <option class="drop-down-option" id="size-1000" value="250-1000"
+              >250-1000</option
+            >
+            <option class="drop-down-option" id="size-1000+" value="1000+"
+              >1000+</option
+            >
           </select>
+          <div class="message">Please select a business size.</div>
           <label for="radio-container" class="form-labels"
             >What is the most important thing to you in a solution?</label
           >

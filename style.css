@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 *:focus {
@@ -65,6 +65,13 @@ header {
   font-weight: bold;
 }
 
+#business-email:focus,
+#business-size:focus {
+  border: 1px solid #c550ff !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+
 #business-email,
 #business-size {
   width: 100%;
@@ -76,8 +83,17 @@ header {
   border: none;
 }
 
-option:nth-child(1) {
-  color: gray;
+select {
+  color: #777582;
+}
+
+select:first-child + option {
+  color: #000 !important;
+}
+
+.drop-down-option {
+  background-color: #fff !important;
+  color: #fff !important;
 }
 
 /* --- RADIO BUTTON STYLING --- */
@@ -121,7 +137,7 @@ option:nth-child(1) {
 }
 
 .radio-group label::before {
-  content: "";
+  content: '';
   width: 15px;
   height: 15px;
   border-radius: 100%;
@@ -131,7 +147,7 @@ option:nth-child(1) {
 }
 
 .radio-group input:checked + label::before {
-  content: "";
+  content: '';
   width: 16px;
   height: 16px;
   max-width: 16px;
@@ -163,4 +179,29 @@ option:nth-child(1) {
 #submit:focus {
   background-color: #aa00ff;
   cursor: pointer;
+}
+
+#submit:active {
+  background-color: #8800cc;
+  cursor: pointer;
+}
+
+/* --- JS CLASSES --- */
+
+.error {
+  border: 1px solid #c41337;
+  background-color: #fff;
+  color: #000;
+}
+
+.success {
+  border: 1px solid #00873f;
+}
+
+.message {
+  color: #c41337;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 6px;
+  display: hidden;
 }
