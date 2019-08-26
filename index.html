@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <title>MemSQL Take Home Assessment</title>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
       rel="stylesheet"
@@ -14,12 +19,18 @@
   <body>
     <header>
       <nav class="nav-bar">
-        <div class="memSQL-logo"></div>
+        <img
+          src="Images/memsql_color_dark-bg_horizontal.png"
+          alt="memsql logo"
+          id="memsql-logo"
+        />
       </nav>
     </header>
     <section>
       <div class="container">
-        <div class="icon-container"></div>
+        <div class="icon-container">
+          <i class="far fa-calendar-alt"></i>
+        </div>
         <div class="title-container">
           <h1 class="form-title">Book a Demo</h1>
           <p class="form-description">
@@ -27,53 +38,65 @@
             below.
           </p>
         </div>
-        <form id="form" action="" method="POST">
+        <!-- FORM -->
+        <form id="form" action="index.html" method="POST">
+          <!-- EMAIL INPUT -->
           <label for="business-email" class="form-labels">Business Email</label>
-          <input
-            type="email"
-            id="business-email"
-            name="business-email"
-            placeholder="Enter your business email"
-            required
-          />
+          <div class="email-container">
+            <input
+              type="email"
+              id="business-email"
+              name="business-email"
+              placeholder="Enter your business email"
+              required
+            />
+            <i class="fas fa-exclamation-triangle"></i>
+            <i class="fas fa-check-circle"></i>
+          </div>
           <div class="message">
-            Please make your email is not a personal account.
+            Please make sure this is not a personal address
           </div>
           <label for="business-size" class="form-labels">Business Size</label>
-          <select id="business-size" placeholder="Select Size" required>
-            <option
-              class="select-label"
-              id="select-label"
-              value="label"
-              selected
-              disabled
-              hidden
-              >Select Size</option
-            >
-            <option class="drop-down-option" id="size-10" value="1-10"
-              >1-10</option
-            >
-            <option class="drop-down-option" id="size-50" value="11-50"
-              >11-50</option
-            >
-            <!-- Noticed Figma was 11-15 and the next option was 51 to 100, made assumption it was meant to be 11 - 50 -->
-            <option class="drop-down-option" id="size-100" value="51-100"
-              >51-100</option
-            >
-            <option class="drop-down-option" id="size-250" value="101-250"
-              >101-250</option
-            >
-            <option class="drop-down-option" id="size-1000" value="250-1000"
-              >250-1000</option
-            >
-            <option class="drop-down-option" id="size-1000+" value="1000+"
-              >1000+</option
-            >
-          </select>
-          <div class="message">Please select a business size.</div>
-          <label for="radio-container" class="form-labels"
+          <!-- SELECT INPUT -->
+          <div class="select-container">
+            <select id="business-size" name="select-menu" required>
+              <option
+                class="select-label"
+                id="select-label"
+                value=""
+                selected
+                disabled
+                hidden
+                >Select Size</option
+              >
+              <option class="drop-down-option" id="size-10" value="1-10"
+                >1-10</option
+              >
+              <option class="drop-down-option" id="size-50" value="11-50"
+                >11-50</option
+              >
+              <!-- Noticed Figma was 11-15 and the next option was 51 to 100, made assumption it was meant to be 11 - 50 -->
+              <option class="drop-down-option" id="size-100" value="51-100"
+                >51-100</option
+              >
+              <option class="drop-down-option" id="size-250" value="101-250"
+                >101-250</option
+              >
+              <option class="drop-down-option" id="size-1000" value="250-1000"
+                >250-1000</option
+              >
+              <option class="drop-down-option" id="size-1000+" value="1000+"
+                >1000+</option
+              >
+            </select>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="message">Please select a business size</div>
+          <!-- RADIO BUTTONS -->
+          <label class="form-labels radio-title"
             >What is the most important thing to you in a solution?</label
           >
+          <div class="message">Please select a solution</div>
           <div id="radio-container">
             <div class="col-left">
               <div class="radio-group">
@@ -152,13 +175,42 @@
               </div>
             </div>
           </div>
-          <input
-            type="submit"
-            id="submit"
-            class="btn-submit btn"
-            value="Continue to Schedule a Time &rarr;"
-          />
+          <div class="submit-container">
+            <input
+              type="submit"
+              id="submit"
+              class="btn-submit btn"
+              value="Continue to Schedule a Time"
+            />
+            <i class="fas fa-arrow-right"></i>
+          </div>
         </form>
+      </div>
+      <!-- AJAX Response: QUALIFIED -->
+      <div class="qualified">
+        <div class="icon-container">
+          <i class="far fa-calendar-check"></i>
+        </div>
+        <div class="qualified-container">
+          <h1 class="qualified-title">Awesome! We'll contact you shortly</h1>
+          <p class="qualified-info">
+            We'll send you an email with available times to meet.
+          </p>
+        </div>
+      </div>
+      <!-- AJAX Response: UNQUALIFIED -->
+      <div class="unqualified">
+        <div class="icon-container">
+          <i class="far fa-calendar-times"></i>
+        </div>
+        <div class="unqualified-container">
+          <h1 class="unqualified-title">
+            Oh no!<br />All our consultants are busy
+          </h1>
+          <p class="unqualified-info">
+            We'll let you know when the next one is available.
+          </p>
+        </div>
       </div>
     </section>
   </body>

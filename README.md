@@ -1,2 +1,7 @@
-# memsql_take_home
- Take Home Assessment
+# MemSQL Take Home Assesment
+
+Take Home Assessment for MemSQL
+
+# Stack Used
+
+HTML, CSS, JQuery, AJAX
