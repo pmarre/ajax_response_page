@@ -1,6 +1,5 @@
-# MemSQL Take Home Assesment
+# AJAX Form Submit 
 
-Take Home Assessment for MemSQL
 
 # Stack Used
 
